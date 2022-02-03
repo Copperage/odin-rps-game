@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fffde6 url(./images/olga-thelavart-vS3idIiYxX0-unsplash.jpg) repeat center;
+  background-size: 1920px 1080px;
+}
+
+body .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.5fr 1.5fr;
+      grid-template-rows: 0.5fr 1.5fr;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+      grid-template-areas: '' '';
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0 0 0;
+}
+
+header .rpsTitle {
+  font-family: "Amatic SC", cursive;
+  font-size: calc(60px + 5vw);
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game h2 {
+  font-size: calc(40px + 1.5vw);
+  margin: 50px auto;
+  font-family: "Amatic SC", cursive;
+}
+
+.game .rps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game .rps button {
+  height: calc(100px + 5vw);
+  width: calc(100px + 5vw);
+  margin: 0 25px;
+  font-size: calc(80px + 5vw);
+  border: none;
+}
+
+.game .rps button span {
+  color: transparent;
+  background: url(./images/scribbles.png) center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+.game .rps button span:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.game .rps button span:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}

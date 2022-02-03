@@ -1,55 +1,62 @@
-const playerChoice = prompt("Choose Rock, Paper or Scissors!")
-const randomChoice = ["Rock", "Paper", "Scissors"];
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
 let playerScore = 0;
 let computerScore = 0;
 let gameRound = 0;
 
 function computerChoice() {
-    return randomChoice[Math.floor(Math.random()*randomChoice.length)];
+	const randomChoice = ['Rock', 'Paper', 'Scissors'];
+	return randomChoice[Math.floor(Math.random() * randomChoice.length)];
 }
 
 function rpsRound(playerChoice, computerChoice) {
-    if (playerChoice.toLowerCase() === "rock" && computerChoice === "Paper"
-        || playerChoice.toLowerCase() === "paper" && computerChoice === "Scissors"
-        || playerChoice.toLowerCase() === "scissors" && computerChoice === "Rock") {
-            return "You Lost!"
-            computerScore++;
-            gameRound++;
-    } else if (playerChoice.toLowerCase() === "rock" && computerChoice === "Scissors"
-    || playerChoice.toLowerCase() === "paper" && computerChoice === "Rock"
-    || playerChoice.toLowerCase() === "scissors" && computerChoice === "Paper") {
-        return "You win!"
-        playerScore++;
-        gameRound++;
-    } else if (playerChoice.toLowerCase() === "rock" && computerChoice === "Rock"
-    || playerChoice.toLowerCase() === "paper" && computerChoice === "Paper"
-    || playerChoice.toLowerCase() === "scissors" && computerChoice === "Scissors") {
-        return "Draw!"
-        gameRound++;
-    } else {
-        return "That isn't a real answer!"
-    }
-};
+	console.log(`You selected ${playerChoice}`);
+	console.log(`Computer selected ${computerChoice}`);
 
-function game() {
-    let player = playerChoice;
-    let computer = computerChoice();
+	if (
+		(playerChoice === 'Rock' && computerChoice === 'Paper') ||
+		(playerChoice === 'Paper' && computerChoice === 'Scissors') ||
+		(playerChoice === 'Scissors' && computerChoice === 'Rock')
+	) {
+		return 'You Lost!';
+		computerScore++;
+		gameRound++;
+	} else if (
+		(playerChoice === 'Rock' && computerChoice === 'Scissors') ||
+		(playerChoice === 'Paper' && computerChoice === 'Rock') ||
+		(playerChoice === 'Scissors' && computerChoice === 'Paper')
+	) {
+		return 'You win!';
+		playerScore++;
+		gameRound++;
+	} else if (
+		(playerChoice === 'Rock' && computerChoice === 'Rock') ||
+		(playerChoice === 'Paper' && computerChoice === 'Paper') ||
+		(playerChoice === 'Scissors' && computerChoice === 'Scissors')
+	) {
+		return 'Draw!';
+		gameRound++;
+	}
+}
 
-    rpsRound(player, computer);
+function game(playerChoice) {
+	let player = playerChoice;
+	let computer = computerChoice();
 
-    if(gameRound === 5 && playerScore > computerScore) {
-        return "You won the game!"
-    } else if (gameRound === 5 && computerScore > playerScore) {
-        return "You lost the game! Better luck next time!"
-    } else {
-        rpsRound(playerChoice, computerChoice);
-    }
-};
+	rpsRound(player, computer);
 
-console.log("You chose: " + playerChoice);
-console.log("The computer chose: " + computerChoice());
-console.log(rpsRound(playerChoice, computerChoice()));
+	// if (gameRound === 5 && playerScore > computerScore) {
+	// 	return 'You won the game!';
+	// } else if (gameRound === 5 && computerScore > playerScore) {
+	// 	return 'You lost the game! Better luck next time!';
+	// }
+}
+
+rock.addEventListener('click', () => game('Rock'));
+paper.addEventListener('click', () => game('Paper'));
+scissors.addEventListener('click', () => game('Scissors'));
 
 /*
     Set two variables, player and cpu

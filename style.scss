@@ -1,0 +1,77 @@
+$bg-color: #fffde6;
+$handwriting: 'Amatic SC', cursive;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: $bg-color url(./images/olga-thelavart-vS3idIiYxX0-unsplash.jpg)
+		repeat center;
+	background-size: 1920px 1080px;
+
+	.container {
+		display: grid;
+		grid-template-rows: 0.5fr 1.5fr;
+		grid-auto-columns: 1fr;
+		grid-auto-flow: column;
+		grid-template-areas:
+			''
+			'';
+	}
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0 0 0;
+
+	.rpsTitle {
+		font-family: $handwriting;
+		font-size: calc(60px + 5vw);
+	}
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h2 {
+		font-size: calc(40px + 1.5vw);
+		margin: 50px auto;
+		font-family: $handwriting;
+	}
+
+	.rps {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		button {
+			height: calc(100px + 5vw);
+			width: calc(100px + 5vw);
+			margin: 0 25px;
+			font-size: calc(80px + 5vw);
+			border: none;
+
+			span {
+				color: transparent;
+				background: url(./images/scribbles.png) center;
+				background-size: cover;
+				background-clip: text;
+				-webkit-background-clip: text;
+				transition: transform 0.1s ease-in-out;
+			}
+			span:hover {
+				transform: scale(1.1);
+			}
+
+			span:active {
+				transform: scale(1);
+			}
+		}
+	}
+}
