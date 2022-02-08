@@ -6,7 +6,6 @@ const scissors = document.querySelector('.scissors');
 let playerScore = 0;
 let computerScore = 0;
 let gameRound = 0;
-let cacheDom = '';
 
 rock.addEventListener('click', () => game('Rock'));
 paper.addEventListener('click', () => game('Paper'));
