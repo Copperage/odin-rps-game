@@ -9,8 +9,7 @@ $handwriting: 'Amatic SC', cursive;
 body {
 	background: $bg-color url(./images/olga-thelavart-vS3idIiYxX0-unsplash.jpg)
 		repeat center;
-	background-size: 1920px 1080px;
-
+	background-size: cover;
 	.container {
 		display: grid;
 		grid-template-rows: 0.5fr 1.5fr;
@@ -22,15 +21,30 @@ body {
 	}
 }
 
+html,
+body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
 header {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 50px 0 0 0;
+	padding: 10px 0;
+	font-family: $handwriting;
+	background-color: rgba($color: #fff, $alpha: 0.3);
+	border-bottom: 2px solid rgba($color: rgb(252, 116, 116), $alpha: 0.2);
 
 	.rpsTitle {
-		font-family: $handwriting;
-		font-size: calc(60px + 5vw);
+		font-size: calc(75px + 1.5vw);
+		margin: 5px 0;
+	}
+
+	.subTitle {
+		font-size: calc(30px + 1.5vw);
 	}
 }
 
@@ -39,10 +53,38 @@ header {
 	flex-direction: column;
 	align-items: center;
 
-	h2 {
+	.round {
 		font-size: calc(40px + 1.5vw);
-		margin: 50px auto;
+		margin: 10px auto;
 		font-family: $handwriting;
+	}
+
+	.winner {
+		text-align: center;
+		font-family: $handwriting;
+		font-size: calc(60px + 1.5vw);
+	}
+
+	span {
+		color: transparent;
+		background: url(./images/scribbles.png) center;
+		background-size: cover;
+		background-clip: text;
+		-webkit-background-clip: text;
+		transition: transform 0.1s ease-in-out;
+	}
+	span:hover {
+		transform: scale(1.1);
+	}
+
+	span:active {
+		transform: scale(1);
+	}
+
+	.restart {
+		margin: 25px 0;
+		font-size: calc(40px + 1.1vw);
+		border: none;
 	}
 
 	.rps {
@@ -56,22 +98,14 @@ header {
 			margin: 0 25px;
 			font-size: calc(80px + 5vw);
 			border: none;
-
-			span {
-				color: transparent;
-				background: url(./images/scribbles.png) center;
-				background-size: cover;
-				background-clip: text;
-				-webkit-background-clip: text;
-				transition: transform 0.1s ease-in-out;
-			}
-			span:hover {
-				transform: scale(1.1);
-			}
-
-			span:active {
-				transform: scale(1);
-			}
 		}
 	}
+}
+
+.decisionText {
+	display: flex;
+	justify-content: center;
+	margin: 25px auto;
+	font-size: calc(40px + 1.5vw);
+	font-family: $handwriting;
 }

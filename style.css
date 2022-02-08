@@ -5,7 +5,7 @@
 
 body {
   background: #fffde6 url(./images/olga-thelavart-vS3idIiYxX0-unsplash.jpg) repeat center;
-  background-size: 1920px 1080px;
+  background-size: cover;
 }
 
 body .container {
@@ -18,22 +18,40 @@ body .container {
       grid-template-areas: '' '';
 }
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 50px 0 0 0;
+  padding: 10px 0;
+  font-family: "Amatic SC", cursive;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(252, 116, 116, 0.2);
 }
 
 header .rpsTitle {
-  font-family: "Amatic SC", cursive;
-  font-size: calc(60px + 5vw);
+  font-size: calc(75px + 1.5vw);
+  margin: 5px 0;
+}
+
+header .subTitle {
+  font-size: calc(30px + 1.5vw);
 }
 
 .game {
@@ -49,10 +67,44 @@ header .rpsTitle {
           align-items: center;
 }
 
-.game h2 {
+.game .round {
   font-size: calc(40px + 1.5vw);
-  margin: 50px auto;
+  margin: 10px auto;
   font-family: "Amatic SC", cursive;
+}
+
+.game .winner {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  font-size: calc(60px + 1.5vw);
+}
+
+.game span {
+  color: transparent;
+  background: url(./images/scribbles.png) center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+.game span:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.game span:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.game .restart {
+  margin: 25px 0;
+  font-size: calc(40px + 1.1vw);
+  border: none;
 }
 
 .game .rps {
@@ -75,24 +127,14 @@ header .rpsTitle {
   border: none;
 }
 
-.game .rps button span {
-  color: transparent;
-  background: url(./images/scribbles.png) center;
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out;
-  transition: -webkit-transform 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
-}
-
-.game .rps button span:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.game .rps button span:active {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+.decisionText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 25px auto;
+  font-size: calc(40px + 1.5vw);
+  font-family: "Amatic SC", cursive;
 }
